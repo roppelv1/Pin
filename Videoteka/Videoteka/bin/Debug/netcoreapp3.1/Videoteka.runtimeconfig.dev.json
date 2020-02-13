@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Roppe\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Roppe\\.nuget\\packages"
+    ]
+  }
+}
