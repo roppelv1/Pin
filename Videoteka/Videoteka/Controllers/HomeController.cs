@@ -19,7 +19,7 @@ namespace Videoteka.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
             return View();
         }
 

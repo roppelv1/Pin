@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Videoteka.Models.Film>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>filmovi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td ><a class="btn btn-primary" role="button" asp-controller="Product" asp-action="GetProduct" asp-route-id="@item.Id">Posudi</a></td>
+        </tr>
+}
+    </tbody>
+</table>
