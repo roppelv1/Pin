@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Videoteka.Models.Posudbe>
+
+@{
+    ViewData["Title"] = "PosudeniFilmovi";
+}
+
+<h1>Posudeni filmovi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumPosudbe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnik)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumPosudbe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Korisnik.Email)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

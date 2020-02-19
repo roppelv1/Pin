@@ -21,7 +21,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Naziv)
             </td>
-            <td ><a class="btn btn-primary" role="button" asp-controller="Product" asp-action="GetProduct" asp-route-id="@item.Id">Posudi</a></td>
+            <td ><a class="btn btn-primary" role="button" asp-controller="Film" asp-action="Posudi" asp-route-FilmId="@item.Id">Posudi</a></td>
         </tr>
 }
     </tbody>

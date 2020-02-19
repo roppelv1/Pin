@@ -75,7 +75,9 @@ namespace Videoteka.Controllers
                     CookieOptions option = new CookieOptions();
                     option.Expires = DateTime.Now.AddHours(10);
 
-                    Response.Cookies.Append("ID", korisnik.Id.ToString(), option);
+                    Response.Cookies.Append("ID", loginCheack.Id.ToString(), option);
+
+                    ViewBag.IsLoged = true;
                     return RedirectToAction("Index", "Film");
                 }
             }
@@ -85,6 +87,7 @@ namespace Videoteka.Controllers
 
         public IActionResult Logout()
         {
+            ViewBag.IsLoged = false;
             Response.Cookies.Delete("ID");
             return RedirectToAction("Index", "Home");
         }

@@ -18,21 +18,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Login">Login</a>
+                            <a  id="visibleIfNotLogin1" class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Signup">Signup</a>
+                            <a  id="visibleIfNotLogin2" class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Signup">Signup</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Index">Filmovi</a>
+                            <a  id="visibleIfLogin1" class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Index">Filmovi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Logout">Logout</a>
+                            <a  id="visibleIfLogin2" class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="PosudeniFilmovi">Posudeni filmovi</a>
                         </li>
+                        <li class="nav-item">
+                            <a  id="visibleIfLogin3" class="nav-link text-dark" asp-area="" asp-controller="Korisnik" asp-action="Logout">Logout</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -53,5 +58,45 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+    <script>
+        $(document).ready(function() {
+          checkCookie();
+        });
+
+        function checkCookie() {
+            var privacy = getCookie("ID");
+            if (privacy != '') {
+                $("#visibleIfLogin1").show();
+                $("#visibleIfLogin2").show();
+                $("#visibleIfLogin3").show();
+                $("#visibleIfNotLogin1").hide();
+                $("#visibleIfNotLogin2").hide();
+
+          } else {
+                // show cookie modal
+                $("#visibleIfLogin1").hide();
+                $("#visibleIfLogin2").hide();
+                $("#visibleIfLogin3").hide();
+                $("#visibleIfNotLogin1").show();
+                $("#visibleIfNotLogin2").show();
+          }
+        }
+
+        function getCookie(cookieName) {
+          var name = cookieName + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+    </script>
 </body>
 </html>

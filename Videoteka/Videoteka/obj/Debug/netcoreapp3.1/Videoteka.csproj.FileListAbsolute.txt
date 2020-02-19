@@ -161,3 +161,4 @@ D:\Pin projekt 2020\Videoteka\Videoteka\obj\Debug\netcoreapp3.1\Videoteka.MvcApp
 D:\Pin projekt 2020\Videoteka\Videoteka\obj\Debug\netcoreapp3.1\Razor\Views\Film\Index.cshtml.g.cs
 D:\Pin projekt 2020\Videoteka\Videoteka\obj\Debug\netcoreapp3.1\Razor\Views\Korisnik\Signup.cshtml.g.cs
 D:\Pin projekt 2020\Videoteka\Videoteka\obj\Debug\netcoreapp3.1\Razor\Views\Korisnik\Login.cshtml.g.cs
+D:\Pin projekt 2020\Videoteka\Videoteka\obj\Debug\netcoreapp3.1\Razor\Views\Film\PosudeniFilmovi.cshtml.g.cs
